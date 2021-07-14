@@ -35,7 +35,7 @@ local function setup(args)
         r = {
           help = "receive",
           messages = {
-            { BashExec = "qrcp receive " .. args.receive_options .. "--keep-alive" },
+            { BashExec = "qrcp receive " .. args.receive_options .. " --keep-alive" },
             "PopMode",
           },
         },
