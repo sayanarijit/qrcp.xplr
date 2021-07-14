@@ -1,13 +1,10 @@
-xplr plugin template
-====================
-
-Use this template to [write your own xplr plugin](https://arijitbasu.in/xplr/en/writing-plugins.html).
+[![xplr-qr.gif](https://s4.gifyu.com/images/xplr-qr.gif)](https://gifyu.com/image/rGzL)
 
 
 Requirements
 ------------
 
-- Some tool
+- [qrcp](https://github.com/claudiodangelis/qrcp)
 
 
 Installation
@@ -26,26 +23,28 @@ Installation
   ```bash
   mkdir -p ~/.config/xplr/plugins
 
-  git clone https://github.com/me/{plugin}.xplr ~/.config/xplr/plugins/{plugin}
+  git clone https://github.com/sayanarijit/qrcp.xplr ~/.config/xplr/plugins/qrcp
   ```
 
 - Require the module in `~/.config/xplr/init.lua`
 
   ```lua
-  require("{plugin}").setup()
+  require("qrcp").setup()
   
   -- Or
   
-  require("{plugin}").setup{
+  require("qrcp").setup{
     mode = "action",
-    key = ":",
+    key = "Q",
+    send_options = "",
+    receive_options = "",
   }
 
-  -- Type `::` and enjoy.
+  -- Type `:Q` to send or receive files.
   ```
 
 
 Features
 --------
 
-- Some cool feature
+- Select multiple files and send.
