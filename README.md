@@ -1,21 +1,22 @@
 [![xplr-qr.gif](https://s4.gifyu.com/images/xplr-qr.gif)](https://gifyu.com/image/rGzL)
 
-
-Requirements
-------------
+## Requirements
 
 - [qrcp](https://github.com/claudiodangelis/qrcp)
 
-
-Installation
-------------
+## Installation
 
 ### Install manually
 
 - Add the following line in `~/.config/xplr/init.lua`
 
   ```lua
-  package.path = os.getenv("HOME") .. '/.config/xplr/plugins/?/src/init.lua'
+  local home = os.getenv("HOME")
+  package.path = home
+  .. "/.config/xplr/plugins/?/init.lua;"
+  .. home
+  .. "/.config/xplr/plugins/?.lua;"
+  .. package.path
   ```
 
 - Clone the plugin
@@ -30,9 +31,9 @@ Installation
 
   ```lua
   require("qrcp").setup()
-  
+
   -- Or
-  
+
   require("qrcp").setup{
     mode = "action",
     key = "Q",
@@ -43,8 +44,6 @@ Installation
   -- Type `:Q` to send or receive files.
   ```
 
-
-Features
---------
+## Features
 
 - Select multiple files and send.
